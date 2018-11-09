@@ -104,6 +104,29 @@ Ta có thể thay thế shell đăng nhập cho user ngoài shell mặc định 
 	[root@ditu~]# useradd -s /sbin/nologin tiennv000 
  ```
 
+##Part II: 5 tùy chon nâng cao cho lện useradd
+=======
+#### 11.Tạo user với thư mục home, shell mặc định và chú thích
+ ```
+	[root@tiennv~]# useradd -m -d /home/directory/ -s /bin/bash -c "Nguyen Viet Tien" -U tiennv
+ ```
+Tùy chọn -m -d để tạo thư mục home cho user t,tùy chọn -s để thiết lập shell cho user, tùiennvy chọn -c để comment, -U để gán tên nhóm trùng với tên user.
+#### 12. Tạo user với thư mục home, tùy chỉnh shell, comment và UID, GID
+ ```
+	[root@tiennv~]# useradd -m -d /path/to/home/directory-s /path/to/shel/bin/zsh -c "Truong Thanh Ha" -u 1000 -g 1000 tiennv 
+ ```
+#### 13. Tạo user với thư mục home, không dùng bash shell, custome comment và user ID
+ ```
+	[root@tiennv]# useradd -m -d /path/to/home/directory -s /usr/sbin/nologin -c "Nguyen Viet Tien" -u 1019 tiennv
+ ```
+#### 14. Tạo user với thư mục home, shell, custome skell, chú thích và user ID
+ ```
+	[root@tiennv~]# useradd -m -d /path/to/home/directory -k /etc/custom.skell -s /bin/tcsh -c "Nguyen Viet Tien" -u 1027 tiennv
 
-
+ ```
+#### 15.Tạo user không có thư mục home, không shell không group và có chú thích
+ ```
+	[root@tiennv]# useradd -M -N -r -s /bin/false -c "Nguyen Viet Tien" tiennv 
+```
+Trong câu lệnh trên, có sự khác biệt so với những câu lệnh trên. Chúng ta sử dụng tùy chọn -M để tạo user không có thư mục home, tùy chọn -N nói lên rằng chỉ có user được tạo, group không được tạo
 
