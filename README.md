@@ -86,6 +86,7 @@ Mặc định khi 1 user mới được tạo thì user đó được hoạt đ�
 		Minimum number of days between password change		: 0
 		Maximum number of days between password change		: 99999
 		Number of days of warning before password expires	: 7
+ ```
 
 ####8. Gán thời hạn cho mật khẩu của user
 Tham số -f dùng để gán thời hạn hoạt động của mật khẩu, giá trị 0 có nghĩa là mật khẩu người dùng đã hết hạn, giá trị 1 có nghĩa mật khẩu không có thời hạn sử dụng, ta có thể gán thời hạn sử dụng cho tài khoản
