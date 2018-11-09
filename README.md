@@ -52,5 +52,57 @@ Mặc định thì khi tạo user thì thường Group ID bằng với UserID, t
  ```
 		[root@tiennv]# useradd -u 1000 -g 500 hatt
 		[root@tiennv]# cat /etc/passwd | grep hatt
-htt:x:1000:500::/home/hatt:/bin/bash
+		htt:x:1000:500::/home/hatt:/bin/bash
  ```
+
+#### 5. Thêm user vào nhiều nhóm
+Ta có thể thêm user vào nhiều nhóm thông qua thuộc tính -G. Ví dụ
+ ```
+		[root@tiennv~]# useradd -G admins,webadmin,developers tiennv 
+		[root@tiennv~]# id tiennv
+		uid=1001(tiennv) gid=1001(tiennv)
+		groups=1001(tiennv),500(admins),501(webadmin),502(developers)
+		context=root:system_r:unconfined_t:SystemLow-SystemHigh
+ ```
+#### 6.  Tạo user không có thư mục home
+Trong một vài trường hợp ta không muốn tạo thư mục home cho user, ví dụ trong trường hợp bảo mật ta thực hiện
+ ```
+[root@tiennv ~]# useradd -M nohomeuser
+ ```
+Kiểm tra
+ ````
+		[root@thanhha~]# ls -l /home/nohomeuser
+		ls: cannot access /home/nohomeuser: No such file or directory
+ ````
+#### 7.Gán thời hạn cho tài khoản
+Mặc định khi 1 user mới được tạo thì user đó được hoạt động vô thời hạn. Ta có thể gắn thời hạn tài khoản cho user bằng thuộc tính -e cùng với ngày tháng hết hạn hoạt động của tài khoản
+ ```
+		tiennv@ditu:~$ sudo chage -l limittimeuser
+		[sudo] password for tiennv: 
+		Last password change					: Th11 09, 2018
+		Password expires					: never
+		Password inactive					: never
+		Account expires						: Th11 09, 2018
+		Minimum number of days between password change		: 0
+		Maximum number of days between password change		: 99999
+		Number of days of warning before password expires	: 7
+
+####8. Gán thời hạn cho mật khẩu của user
+Tham số -f dùng để gán thời hạn hoạt động của mật khẩu, giá trị 0 có nghĩa là mật khẩu người dùng đã hết hạn, giá trị 1 có nghĩa mật khẩu không có thời hạn sử dụng, ta có thể gán thời hạn sử dụng cho tài khoản
+ ```
+		[root@thanhha~]# useradd -e 2014-04-27 -f 45 thanhha
+ ```
+#### 9. Thêm các chú thích cho user
+Ta có thể thêm các chú thích cho các user ví dụ như tên đầy đủ, số điện thoại, địa chỉ thông qua lựa chọn -c
+ ```
+		Ta có thể xem chú thích trong file /etc/passwd
+ ```
+#### 10. Thay thế shell cho user
+Ta có thể thay thế shell đăng nhập cho user ngoài shell mặc định là bash shell
+ ```
+	[root@ditu~]# useradd -s /sbin/nologin tiennv000 
+ ```
+
+
+
+
