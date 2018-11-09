@@ -19,11 +19,11 @@ Giả sử ta muốn tạo 1 user testuser:
 	usertest:x:1001:1001:usertest:/home/usertest:/bin/bash
  ```
  Ý nghĩa các trường:
- 	* Username: tên user để đăng nhập vào hệ thống.
- 	* Password: Password của user được mã hóa.
- 	* User ID (UID): Mỗi user có 1 UID riêng, mặc định UID=0 dành cho user root, UID thuộc từ 1 đến 999 dành riêng cho các tài khoản được xác định trước.từ 1000 trở đi dành cho user khác.
- 	* Group ID (GID): Group ID (GID) Group Identification Number được lưu tại /etc/group file.
- 	* User Info: Cho phép xác định thêm thông tin user như tên đầy đủ.
- 	* Home Directory: Thư mục home của user.
- 	* Shell: Tên chương trình sẽ thực thi ngay sau khi user login vào. Nếu không có shell user sẽ không thể login. Mặc nhiên trên Linux sẽ dùng bash shell ở đây.
+ * 	Username: tên user để đăng nhập vào hệ thống.
+ * 	Password: Password của user được mã hóa.
+ * 	User ID (UID): Mỗi user có 1 UID riêng, mặc định UID=0 dành cho user root, UID thuộc từ 1 đến 999 dành riêng cho các tài khoản được xác định trước.từ 1000 trở đi dành cho user khác.
+ * 	Group ID (GID): Group ID (GID) Group Identification Number được lưu tại /etc/group file.
+ * 	User Info: Cho phép xác định thêm thông tin user như tên đầy đủ.
+ * 	Home Directory: Thư mục home của user.
+ * 	Shell: Tên chương trình sẽ thực thi ngay sau khi user login vào. Nếu không có shell user sẽ không thể login. Mặc nhiên trên Linux sẽ dùng bash shell ở đây.
 
