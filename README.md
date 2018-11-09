@@ -47,3 +47,10 @@ Kiểm tra user vừa tạo:
 	usertest1100:x:1100:1100::/home/usertest1100:
  ````
 
+#### 4. Tạo user với Group ID
+Mặc định thì khi tạo user thì thường Group ID bằng với UserID, tuy nhiên ta có thể thay thế Group ID như sau:
+ ```
+		[root@tiennv]# useradd -u 1000 -g 500 hatt
+		[root@tiennv]# cat /etc/passwd | grep hatt
+htt:x:1000:500::/home/hatt:/bin/bash
+ ```
